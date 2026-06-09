@@ -1,41 +1,54 @@
-
-PROVA - Sistema Django com Docker
-
-Autor
-
-Guilherme Ferreira Velloso
+API de Gerenciamento de Tarefas
 
 Descrição
 
-Projeto desenvolvido utilizando Django, PostgreSQL e Docker.
+API desenvolvida em Django para gerenciamento de usuários e tarefas.
 
-Requisitos
+O sistema permite realizar operações de cadastro, consulta, alteração e exclusão de registros (CRUD), utilizando banco de dados PostgreSQL e execução via Docker.
 
-- Docker Desktop instalado
+Tecnologias Utilizadas
 
-Como executar
+- Python
+- Django
+- PostgreSQL
+- Docker
+- Docker Compose
 
-1. Baixar as imagens do Docker Hub:
+Estrutura do Projeto
 
-docker pull guilhermefvelloso/prova-web:v1
+backend/
+├── config/
+├── tarefas/
+├── usuarios/
+├── manage.py
+├── requirements.txt
+└── Dockerfile
 
-2. Executar os containers:
+docker-compose.yml
+README.md
+
+Como Executar
+
+1. Clonar o repositório
+
+git clone https://github.com/Guilhermefvelloso/prova.git
+cd prova
+
+2. Iniciar os containers
 
 docker compose up -d
 
-3. Verificar os containers em execução:
-
-docker compose ps
-
-4. Executar as migrações do banco:
+3. Executar as migrações
 
 docker compose exec web python manage.py migrate
 
-5. Criar o usuário administrador:
+4. Criar um superusuário
 
 docker compose exec web python manage.py createsuperuser
 
-6. Acessar o sistema:
+5. Acessar o sistema
+
+Painel administrativo:
 
 http://localhost:8000/admin
 
@@ -45,10 +58,30 @@ Imagem publicada:
 
 guilhermefvelloso/prova-web:v1
 
-Tecnologias Utilizadas
+Download da imagem:
 
-- Python
-- Django
-- PostgreSQL
-- Docker
-- Docker Compose
+docker pull guilhermefvelloso/prova-web:v1
+
+Funcionalidades
+
+Usuários
+
+- Criar usuário
+- Consultar usuário
+- Atualizar usuário
+- Excluir usuário
+
+Tarefas
+
+- Criar tarefa
+- Consultar tarefa
+- Atualizar tarefa
+- Excluir tarefa
+
+Autor
+
+Guilherme Ferreira Velloso
+
+Disciplina: Laboratório de Programação Back-End
+
+Professor: Alvaro Leiroz
